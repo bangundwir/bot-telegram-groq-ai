@@ -1,6 +1,7 @@
 # Telegram Bot with Groq API Integration
 
 ## Table of Contents
+
 1. [Introduction](#introduction)
 2. [Prerequisites](#prerequisites)
 3. [Setup](#setup)
@@ -11,40 +12,49 @@
 8. [Customization](#customization)
 9. [Troubleshooting](#troubleshooting)
 
-## Introduction
+---
 
-This Telegram Bot is an advanced chatbot that integrates with the Groq API to provide AI-powered conversations. It features multiple AI models, character selection, and a graphical user interface (GUI) for easy management.
+# Bahasa Indonesia
 
-## Prerequisites
+## 📜 Pendahuluan
+
+Bot Telegram ini adalah chatbot canggih yang terintegrasi dengan Groq API untuk menyediakan percakapan yang didukung oleh AI. Fitur-fiturnya meliputi beberapa model AI, pemilihan karakter, dan antarmuka pengguna grafis (GUI) untuk manajemen yang mudah.
+
+## 🛠️ Prasyarat
 
 - Python 3.7+
-- `telebot` library
-- `requests` library
-- `PyQt6` library
-- Telegram Bot Token
-- Groq API Key
+- Perpustakaan `telebot`
+- Perpustakaan `requests`
+- Perpustakaan `PyQt6`
+- Token Bot Telegram
+- Kunci API Groq
 
-## Setup
+## ⚙️ Pengaturan
 
-1. Clone the repository or download the script.
-2. Install the required libraries:
-   ```
+1. Klon repositori atau unduh skrip.
+
+2. Instal perpustakaan yang diperlukan:
+
+   ```sh
    pip install pyTelegramBotAPI requests PyQt6
    ```
-3. Create a `api-bot-groq.json` file in the same directory as the script with the following content:
+
+3. Buat file `api-bot-groq.json` di direktori yang sama dengan skrip dengan konten berikut:
+
    ```json
    {
        "TELEGRAM_BOT_TOKEN": "your_telegram_bot_token_here",
        "GROQ_API_KEY": "your_groq_api_key_here"
    }
    ```
-4. Create a `characters.json` file in the same directory with character definitions (example provided in the [Configuration](#configuration) section).
 
-## Configuration
+4. Buat file `characters.json` di direktori yang sama dengan definisi karakter (contoh disediakan di bagian [Konfigurasi](#konfigurasi)).
 
-### API Keys
+## 🛠️ Konfigurasi
 
-Store your API keys in the `api-bot-groq.json` file:
+### 🔑 Kunci API
+
+Simpan kunci API Anda di file `api-bot-groq.json`:
 
 ```json
 {
@@ -53,82 +63,84 @@ Store your API keys in the `api-bot-groq.json` file:
 }
 ```
 
-### Characters
+### 🎭 Karakter
 
-Define characters in the `characters.json` file:
+Definisikan karakter dalam file `characters.json`:
 
 ```json
 {
     "default": {
-        "name": "Default Assistant",
-        "description": "A helpful AI assistant."
+        "name": "Asisten Default",
+        "description": "Asisten AI yang membantu."
     },
     "historian": {
-        "name": "History Expert",
-        "description": "An AI specializing in historical facts and events."
+        "name": "Pakar Sejarah",
+        "description": "AI yang mengkhususkan diri dalam fakta dan peristiwa sejarah."
     }
 }
 ```
 
-## Usage
+## 🚀 Penggunaan
 
-1. Run the script:
-   ```
+1. Jalankan skrip:
+
+   ```sh
    python your_script_name.py
    ```
-2. Use the GUI to start and stop the bot.
-3. Interact with the bot on Telegram using the following commands:
-   - `/start`: Begin a conversation
-   - `/menu`: Display the main menu
-   - Use the inline buttons to change models, characters, or access other features
 
-## Key Components
+2. Gunakan GUI untuk memulai dan menghentikan bot.
 
-### Bot Functionality
+3. Berinteraksi dengan bot di Telegram menggunakan perintah berikut:
 
-- Multiple AI models support
-- Character selection
-- Conversation context management
-- Voice message transcription
-- Suggestion generation for conversation topics
+   - `/start`: Memulai percakapan
+   - `/menu`: Menampilkan menu utama
+   - Gunakan tombol inline untuk mengganti model, karakter, atau mengakses fitur lainnya
 
-### Message Handlers
+## 🔍 Komponen Utama
 
-- `/start`: Sends a welcome message
-- `/menu`: Displays the main menu
-- Callback query handler for inline buttons
-- Voice message handler for transcription
-- General message handler for conversations
+### 💬 Fungsionalitas Bot
 
-## GUI Interface
+- Dukungan beberapa model AI
+- Pemilihan karakter
+- Manajemen konteks percakapan
+- Transkripsi pesan suara
+- Generasi saran untuk topik percakapan
 
-The graphical user interface provides the following features:
+### 📜 Penanganan Pesan
 
-- Start Bot: Begins the bot's operation
-- Stop Bot: Gracefully stops the bot
-- Log Display: Shows bot activity and errors
+- `/start`: Mengirim pesan selamat datang
+- `/menu`: Menampilkan menu utama
+- Penanganan kueri callback untuk tombol inline
+- Penanganan pesan suara untuk transkripsi
+- Penanganan pesan umum untuk percakapan
 
-## Customization
+## 🖥️ Antarmuka GUI
 
-### Adding New Models
+Antarmuka pengguna grafis menyediakan fitur berikut:
 
-Add new model names to the `AVAILABLE_MODELS` list in the script.
+- Memulai Bot: Memulai operasi bot
+- Menghentikan Bot: Menghentikan bot dengan baik
+- Tampilan Log: Menampilkan aktivitas bot dan kesalahan
 
-### Adding New Characters
+## 🔧 Kustomisasi
 
-Add new character definitions to the `characters.json` file.
+### 🔄 Menambahkan Model Baru
 
-### Modifying Bot Behavior
+Tambahkan nama model baru ke daftar `AVAILABLE_MODELS` dalam skrip.
 
-Adjust the `handle_message` function to change how the bot processes and responds to messages.
+### 🎭 Menambahkan Karakter Baru
 
-## Troubleshooting
+Tambahkan definisi karakter baru ke file `characters.json`.
 
-- **Bot Not Responding**: Check your internet connection and verify the Telegram Bot Token.
-- **API Errors**: Ensure your Groq API key is correct and has sufficient permissions.
-- **GUI Not Starting**: Verify that PyQt6 is installed correctly.
-- **Character/Model Issues**: Check the `characters.json` file and `AVAILABLE_MODELS` list for correct formatting.
+### ⚙️ Memodifikasi Perilaku Bot
 
-For any other issues, check the console output for error messages and refer to the respective library documentation
+Sesuaikan fungsi `handle_message` untuk mengubah cara bot memproses dan merespons pesan.
 
-s for `telebot`, `requests`, and `PyQt6`.
+## 🚑 Pemecahan Masalah
+
+- **Bot Tidak Merespons**: Periksa koneksi internet Anda dan verifikasi Token Bot Telegram.
+- **Kesalahan API**: Pastikan kunci API Groq Anda benar dan memiliki izin yang cukup.
+- **GUI Tidak Berjalan**: Verifikasi bahwa PyQt6 telah diinstal dengan benar.
+- **Masalah Karakter/Model**: Periksa file `characters.json` dan daftar `AVAILABLE_MODELS` untuk format yang benar.
+
+Untuk masalah lainnya, periksa output konsol untuk pesan kesalahan dan rujuk dokumentasi perpustakaan yang bersangkutan untuk `telebot`, `requests`, dan `PyQt6`.
